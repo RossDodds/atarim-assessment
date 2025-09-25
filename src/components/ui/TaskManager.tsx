@@ -3,6 +3,7 @@ import { useTasks } from "../../hooks/task";
 import { Task } from "../../types";
 import { Plus } from "lucide-react";
 import { TaskFormModal } from "./TaskFormModal";
+import { TaskList } from "./TaskList";
 
 export default function TaskManager() {
   const { tasks, addTask, updateTask, deleteTask, toggleCompletion } =
@@ -25,12 +26,20 @@ export default function TaskManager() {
           Add Task
         </button>
       </div>
+      <TaskList
+        tasks={tasks}
+        onEdit={(task) => {
+          setSelectedTask(task);
+          setShowModal(true);
+        }}
+        onDelete={(id) => deleteTask(id)}
+        onToggle={(id) => toggleCompletion(id)}
+      />
       <TaskFormModal
         open={showModal}
         onClose={() => setShowModal(false)}
         existingTask={selectedTask}
         onSubmit={selectedTask ? updateTask : addTask}
-        totalTasks={tasks.length.toString()}
       />
     </main>
   );

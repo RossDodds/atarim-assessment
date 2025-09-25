@@ -4,12 +4,15 @@ import { Task } from "../types";
 const TASKS_KEY = "atarim_tasks";
 
 export const useTasks = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
-
-  useEffect(() => {
+  const [tasks, setTasks] = useState<Task[]>(() => {
     const stored = localStorage.getItem(TASKS_KEY);
-    if (stored) setTasks(JSON.parse(stored));
-  }, []);
+    if (stored) {
+      try {
+        return JSON.parse(stored);
+      } catch {}
+    }
+    return [];
+  });
 
   useEffect(() => {
     localStorage.setItem(TASKS_KEY, JSON.stringify(tasks));
