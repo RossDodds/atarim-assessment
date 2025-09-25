@@ -18,7 +18,7 @@ npm install
 npm run dev
 ```
 
-## DEMO (https://atarim-assessment-37umxhmeg-ross-dodds-projects.vercel.app)
+## DEMO (https://atarim-assessment.vercel.app)
 
 **Design descisions:**
 
