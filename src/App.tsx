@@ -1,4 +1,5 @@
 import { Clock, CheckSquare, Zap, Code, Palette, Play } from "lucide-react";
+import TaskManager from "./components/ui/TaskManager";
 
 const requirements = [
   {
@@ -150,23 +151,7 @@ function App() {
 
         {/* Current Progress */}
         <div className="bg-white rounded-lg shadow-sm border p-6 mb-8">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            Your Implementation Space
-          </h2>
-          <div className="border-2 border-dashed border-gray-200 rounded-lg p-8 text-center">
-            <CheckSquare className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-            <h3 className="text-lg font-medium text-gray-700 mb-2">
-              Ready to Start Building?
-            </h3>
-            <p className="text-gray-500 mb-4">
-              This is where your task dashboard will live. Start by replacing
-              the contents of this App.tsx file.
-            </p>
-            <div className="text-sm text-gray-400">
-              Ready to implement:{" "}
-              <span className="font-mono">Task Dashboard</span>
-            </div>
-          </div>
+          <TaskManager />
         </div>
 
         {/* Key Files */}
