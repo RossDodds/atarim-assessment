@@ -1,37 +1,37 @@
-import { Clock, CheckSquare, Zap, Code, Palette, Play } from 'lucide-react';
+import { Clock, CheckSquare, Zap, Code, Palette, Play } from "lucide-react";
 
 const requirements = [
   {
     icon: <Code className="w-5 h-5" />,
-    title: 'Core Implementation',
-    time: '35 min',
+    title: "Core Implementation",
+    time: "35 min",
     items: [
-      'Task CRUD operations',
-      'TypeScript interfaces',
-      'Form validation',
-      'State management',
+      "Task CRUD operations",
+      "TypeScript interfaces",
+      "Form validation",
+      "State management",
     ],
   },
   {
     icon: <Zap className="w-5 h-5" />,
-    title: 'Animations & Interactions',
-    time: '15 min',
+    title: "Animations & Interactions",
+    time: "15 min",
     items: [
-      'Framer Motion animations',
-      'Micro-interactions',
-      'Hover states',
-      'Transition feedback',
+      "Framer Motion animations",
+      "Micro-interactions",
+      "Hover states",
+      "Transition feedback",
     ],
   },
   {
     icon: <Palette className="w-5 h-5" />,
-    title: 'Design & UX',
-    time: '10 min',
+    title: "Design & UX",
+    time: "10 min",
     items: [
-      'Tailwind CSS styling',
-      'Responsive design',
-      'Accessibility',
-      'Visual hierarchy',
+      "Tailwind CSS styling",
+      "Responsive design",
+      "Accessibility",
+      "Visual hierarchy",
     ],
   },
 ];
@@ -53,10 +53,10 @@ function App() {
             Frontend Take-Home Assessment
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-            Build an{' '}
+            Build an{" "}
             <span className="font-semibold text-indigo-600">
               Interactive Task Dashboard
-            </span>{' '}
+            </span>{" "}
             that showcases your React, TypeScript, and animation skills.
           </p>
 
@@ -94,7 +94,7 @@ function App() {
               <div className="flex items-center gap-2 text-sm text-gray-500">
                 <CheckSquare className="w-4 h-4" />
                 <span>
-                  Task interface already defined in{' '}
+                  Task interface already defined in{" "}
                   <code className="bg-gray-100 px-1 rounded text-xs">
                     src/types/index.ts
                   </code>
@@ -163,7 +163,7 @@ function App() {
               the contents of this App.tsx file.
             </p>
             <div className="text-sm text-gray-400">
-              Ready to implement:{' '}
+              Ready to implement:{" "}
               <span className="font-mono">Task Dashboard</span>
             </div>
           </div>
@@ -205,7 +205,7 @@ function App() {
         {/* Footer */}
         <footer className="text-center mt-12 pt-8 border-t border-gray-200">
           <p className="text-gray-500 text-sm">
-            📖 Full requirements and evaluation criteria are in the{' '}
+            📖 Full requirements and evaluation criteria are in the{" "}
             <code className="bg-gray-100 px-1 rounded">README.md</code>
           </p>
           <p className="text-gray-400 text-xs mt-2">
