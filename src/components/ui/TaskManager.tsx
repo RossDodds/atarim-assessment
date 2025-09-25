@@ -2,12 +2,13 @@ import { useState } from "react";
 import { useTasks } from "../../hooks/task";
 import { Task } from "../../types";
 import { Plus } from "lucide-react";
+import { TaskFormModal } from "./TaskFormModal";
 
 export default function TaskManager() {
   const { tasks, addTask, updateTask, deleteTask, toggleCompletion } =
     useTasks();
   const [showModal, setShowModal] = useState(false);
-  const [selectedTask, setSelectedTask] = useState<Task | null>(null);
+  const [selectedTask, setSelectedTask] = useState<Task | undefined>(undefined);
 
   return (
     <main className="p-6 max-w-2xl mx-auto space-y-6">
@@ -15,7 +16,7 @@ export default function TaskManager() {
         <h1 className="text-2xl font-bold">My Tasks</h1>
         <button
           onClick={() => {
-            setSelectedTask(null);
+            setSelectedTask(undefined);
             setShowModal(true);
           }}
           className="bg-blue-600 hover:bg-blue-700 text-white px-2 py-1 rounded flex items-center gap-2"
@@ -24,6 +25,13 @@ export default function TaskManager() {
           Add Task
         </button>
       </div>
+      <TaskFormModal
+        open={showModal}
+        onClose={() => setShowModal(false)}
+        existingTask={selectedTask}
+        onSubmit={selectedTask ? updateTask : addTask}
+        totalTasks={tasks.length.toString()}
+      />
     </main>
   );
 }

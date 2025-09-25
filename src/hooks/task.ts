@@ -1,8 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Task } from "../types";
+
+const TASKS_KEY = "atarim_tasks";
 
 export const useTasks = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
+
+  useEffect(() => {
+    const stored = localStorage.getItem(TASKS_KEY);
+    if (stored) setTasks(JSON.parse(stored));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(TASKS_KEY, JSON.stringify(tasks));
+  }, [tasks]);
 
   const addTask = (task: Task) => setTasks((prev) => [...prev, task]);
 
