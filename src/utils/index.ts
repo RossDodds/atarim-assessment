@@ -1,4 +1,5 @@
-import { clsx, type ClassValue } from 'clsx';
+import { clsx } from "clsx";
+import type { ClassValue } from "clsx";
 
 export function cn(...inputs: ClassValue[]) {
   return clsx(inputs);
@@ -9,8 +10,8 @@ export function generateId(): string {
 }
 
 export function formatDate(date: Date): string {
-  return new Intl.DateTimeFormat('en-US', {
-    month: 'short',
-    day: 'numeric',
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
   }).format(date);
 }

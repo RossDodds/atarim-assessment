@@ -3,9 +3,9 @@ export interface Task {
   title: string;
   description?: string;
   completed: boolean;
-  priority: 'low' | 'medium' | 'high';
-  dueDate?: Date;
-  createdAt: Date;
+  priority: "low" | "medium" | "high";
+  dueDate?: string;
+  createdAt: string;
 }
 
-export type TaskFormData = Omit<Task, 'id' | 'createdAt' | 'completed'>;
+export type TaskFormData = Omit<Task, "id" | "createdAt" | "completed">;
